@@ -28,7 +28,6 @@ jobs:
           
           
       - name: deploy
-
         run: |
           echo '${{ secrets.CONFIG }}' > ./config.yaml && ls
           flyctl deploy --remote-only
