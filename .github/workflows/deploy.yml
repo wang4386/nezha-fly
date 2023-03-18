@@ -27,7 +27,8 @@ jobs:
           fi
           
           
-      - name: deploy
+            - name: deploy
+        if: ${{ env.new_release == 'yes'  }}
         run: |
           echo '${{ secrets.CONFIG }}' > ./config.yaml && ls
           flyctl deploy --remote-only
